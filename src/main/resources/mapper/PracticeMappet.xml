@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.web.dao.PracticeDao">
+    <resultMap id="BaseResultMap" type="com.example.demo.web.entity.PracticeEntity">
+        <result column="userName" jdbcType="VARCHAR" property="userName"/>
+        <result column="userAge" jdbcType="VARCHAR" property="userAge"/>
+        <result column="userSex" jdbcType="VARCHAR" property="userSex"/>
+        <result column="userSize" jdbcType="VARCHAR" property="userSize"/>
+        <result column="userHeight" jdbcType="VARCHAR" property="userHeight"/>
+        <result column="userHobby" jdbcType="VARCHAR" property="userHobby"/>
+    </resultMap>
+    <select id="findData" resultType="com.example.demo.web.entity.PracticeEntity">
+        SELECT * from tb_User
+
+    </select>
+</mapper>
