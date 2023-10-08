@@ -23,4 +23,8 @@ public class PracticeController {
     public List<PracticeEntity> findAll() {
         return practiceServe.findAll();
     }
+    @GetMapping("/list")
+    public String hello() {
+        return "Hello World";
+    }
 }
