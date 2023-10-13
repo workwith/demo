@@ -7,4 +7,5 @@ import org.springframework.stereotype.Service;
 
 @Mapper
 public interface UserMapper extends BaseMapper<User> {
+
 }
