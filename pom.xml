@@ -27,6 +27,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
         <!--数据库连接驱动-->
         <dependency>
             <groupId>mysql</groupId>
@@ -42,7 +43,12 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.4.0</version>
+            <version>3.5.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter-test</artifactId>
+            <version>3.5.3.2</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -54,8 +60,21 @@
             <version>1.18.20</version>
             <optional>true</optional>
         </dependency>
-
-
+        <!-- lombok 依赖（免写 setXXX/getXXX 方法） -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.10</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>p6spy</groupId>
+            <artifactId>p6spy</artifactId>
+            <version>3.9.1</version>
+        </dependency>
     </dependencies>
 
     <!-- 这个插件，可以将应用打包成一个可执行的jar包  -->
