@@ -34,9 +34,19 @@ public class addtest {
     }
 //    @PostConstruct
     @GetMapping
-    void getList(){
-//        List<User> list = userService
+    public List getList(){
+//        List<User> list = userService.
+        List<User> list =  userService.list();
+        System.out.println(list);
+        return list;
     }
+    @DeleteMapping
+    public String deleteUser(@RequestBody String id){
+        System.out.println(id);
+
+        return "ok";
+    }
+
     @PostMapping("/add")
     public Object postmanadd(@RequestBody User user){
         userService.addname();
