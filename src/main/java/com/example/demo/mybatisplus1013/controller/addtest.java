@@ -47,14 +47,5 @@ public class addtest {
         return "ok";
     }
 
-    @PostMapping("/add")
-    public Object postmanadd(@RequestBody User user){
-        userService.addname();
-        boolean isSuccess = userService.save(user);
-        long id = user.getId();
-        System.out.println(id);
-        return user;
-    }
-
 
 }
