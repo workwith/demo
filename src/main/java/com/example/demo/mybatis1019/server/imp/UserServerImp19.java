@@ -12,12 +12,14 @@ import org.springframework.stereotype.Service;
 public class UserServerImp19 extends ServiceImpl<UserMapper19, User19> implements UserServe19 {
     @Autowired
     private UserMapper19 userMapper19;
+
     public Result addUser(User19 user){
         System.out.println(user);
         User19 data = new User19().setName(user.getName()).setAge(user.getAge()).setGender(user.getGender());
         this.userMapper19.insert(data);
+//        this.userServe19.save(data);
         Long id = data.getId();
         System.out.println(id);
-        return Result.createWithSuccessMessage();
+        return Result.createWithModel(id);
     }
 }
