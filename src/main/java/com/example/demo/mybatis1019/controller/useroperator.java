@@ -1,5 +1,6 @@
 package com.example.demo.mybatis1019.controller;
 
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.example.common.base.Result;
 import com.example.demo.mybatis1019.server.UserServe19;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,21 +26,19 @@ public class useroperator {
     // 查询
     @GetMapping
     public Result getAllList(@RequestParam(defaultValue = "all") String id){
-        System.out.println(id);
-        if(Objects.equals(id, "all")){
-            List<User19> getlist;
-            getlist = userserve19.list();
-            return Result.createWithModel(getlist);
-        }else{
-            User19 user = userserve19.getById(id);
-            System.out.println(user);
-            return Result.createWithModel(user);
-        }
+        return userserve19.getList(id);
+    }
+    //更新
+    @PutMapping
+    public Result putUser(@RequestBody User19 user){
+       return  userserve19.updataUser(user);
     }
 
     //删除
-//    @DeleteMapping("/{id}")
-//    public Result deleuser(@PathVariable Long id){
-//
-//    }
+    @DeleteMapping("/{id}")
+    public Result deleUser(@PathVariable Long id){
+        boolean a = userserve19.removeById(id);
+        return Result.createWithModel(a);
+    }
+
 }

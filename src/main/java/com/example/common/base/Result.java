@@ -2,6 +2,7 @@ package com.example.common.base;
 ;
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -36,6 +37,11 @@ public class Result<T>{
     public static <T> Result<T> createWithModel(T model) {
         Result result = createWithSuccessMessage();
         result.setModel(model);
+        return result;
+    }
+    public static <T> Result<T> createWithModels(List<T> models) {
+        Result result = createWithSuccessMessage();
+        result.setModels(models == null ? new ArrayList<>(0) : models);
         return result;
     }
 
